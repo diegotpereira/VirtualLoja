@@ -7,10 +7,10 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class ClienteController {
 	
-	@RequestMapping("/CadCliente")
-	  public ModelAndView CadCliente(){
+	@RequestMapping("/ListaCliente")
+	  public ModelAndView ListarCliente(){
 			
-	        ModelAndView modelAndView = new ModelAndView("CadCliente");
+	        ModelAndView modelAndView = new ModelAndView("ListaCliente");
 	        
 	        return modelAndView;
 	    }
