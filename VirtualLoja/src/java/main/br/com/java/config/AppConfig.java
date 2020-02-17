@@ -33,6 +33,7 @@ import br.com.java.controller.QuemSomosController;
 
 
 
+
 @EnableWebMvc
 @ComponentScan(basePackageClasses={
 		HomeController.class,
