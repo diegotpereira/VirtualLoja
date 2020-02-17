@@ -20,16 +20,16 @@
 		  <div class="container">
 		    <div class="navbar-header">
 		      
-		      <a class="navbar-brand" href="#">LojaOnline</a>
+		      <a class="navbar-brand" href="home">LojaOnline</a>
 		    </div>
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-		        <li><a href="views/CadCliente.html">Cliente</a></li>
-		        <li><a href="#">Cadastro de Clientes</a></li>
-		        <li><a href="#">Produtos</a></li>
-		        <li><a href="#">Cadastro de Produto</a></li>
-		        <li><a href="#">Quem Somos</a></li>
-		        <li><a href="#">Contato</a></li>
+		        <li><a href="ListaCliente">Lista de Cliente</a></li>
+		        <li><a href="CadastroCliente">Cadastro de Clientes</a></li>
+		        <li><a href="ListaProduto">Lista de Produtos</a></li>
+		        <li><a href="CadastroProduto">Cadastro de Produto</a></li>
+		        <li><a href="Somos">Quem Somos</a></li>
+		        <li><a href="Contatos">Contato</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div>
