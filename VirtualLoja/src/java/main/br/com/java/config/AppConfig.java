@@ -22,13 +22,26 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.google.common.cache.CacheBuilder;
 
+import br.com.java.controller.ClienteCadController;
+import br.com.java.controller.ClienteController;
+import br.com.java.controller.ContatoController;
 import br.com.java.controller.HomeController;
+import br.com.java.controller.ProdutoCadController;
+import br.com.java.controller.ProdutoController;
+import br.com.java.controller.QuemSomosController;
 
 
 
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses={HomeController.class})
+@ComponentScan(basePackageClasses={
+		HomeController.class,
+		ClienteCadController.class,
+		   ClienteController.class,
+		   ProdutoCadController.class,
+		   ProdutoController.class,
+		   QuemSomosController.class,
+		   ContatoController.class})
 public class AppConfig extends WebMvcConfigurerAdapter {
 	
 	
