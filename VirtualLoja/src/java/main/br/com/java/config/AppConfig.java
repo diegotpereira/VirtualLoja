@@ -9,6 +9,8 @@ import org.springframework.cache.guava.GuavaCacheManager;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.web.accept.ContentNegotiationManager;
 import org.springframework.web.multipart.MultipartResolver;
@@ -42,7 +44,11 @@ import br.com.java.controller.QuemSomosController;
 		   ProdutoCadController.class,
 		   ProdutoController.class,
 		   QuemSomosController.class,
-		   ContatoController.class})
+		   ContatoController.class
+		   })
+
+@Configuration
+@Import(PersistenceConfig.class)
 public class AppConfig extends WebMvcConfigurerAdapter {
 	
 	
