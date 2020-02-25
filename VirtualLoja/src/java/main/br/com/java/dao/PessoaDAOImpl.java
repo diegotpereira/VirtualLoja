@@ -12,7 +12,7 @@ import br.com.java.models.Pessoa;
 @Repository
 public class PessoaDAOImpl implements PessoaDAO{
 	
-	@Autowired
+	@Autowired 
 	private SessionFactory sessionFactory;
 
 	public void addPessoa(Pessoa pessoa) {

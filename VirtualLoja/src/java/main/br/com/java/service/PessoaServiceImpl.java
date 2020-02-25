@@ -9,11 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 import br.com.java.dao.PessoaDAO;
 import br.com.java.models.Pessoa;
 
-@Service
+@Service ("pessoaService")
 @Transactional
 public class PessoaServiceImpl implements PessoaService {
 	
-	@Autowired
+	@Autowired 
 	private PessoaDAO pessoaDAO;
 
 	@Override
