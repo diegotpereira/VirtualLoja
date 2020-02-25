@@ -1,33 +1,23 @@
 package br.com.java.controller;
 
 
-
-import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
 import br.com.java.models.Pessoa;
 import br.com.java.service.PessoaService;
 
 @Controller
 public class ClienteCadController {
-	
-	private static final Logger logger = Logger
-			.getLogger(ClienteCadController.class);	
 
-	public ClienteCadController() {
-		System.out.println("ClienteCadController()");
-	}
 	
-	@Autowired
-	public PessoaService pessoaService;
-	
-	@RequestMapping(value = "/CadastroCliente")
+    @Autowired 
+	private PessoaService pessoaService;
+    
+    @RequestMapping(value = "/CadastroCliente")
 	  public ModelAndView CadastrarCliente(){
 			
 	        ModelAndView modelAndView = new ModelAndView("CadCliente");
@@ -45,5 +35,7 @@ public class ClienteCadController {
 		}
 		return new ModelAndView("redirect:/");
 	}
+	
+	
 
 }
