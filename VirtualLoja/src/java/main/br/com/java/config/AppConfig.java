@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.springframework.cache.CacheManager;
-import org.springframework.cache.guava.GuavaCacheManager;
+
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -22,7 +22,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-import com.google.common.cache.CacheBuilder;
+
 
 import br.com.java.controller.ClienteCadController;
 import br.com.java.controller.ClienteController;
@@ -31,24 +31,21 @@ import br.com.java.controller.HomeController;
 import br.com.java.controller.ProdutoCadController;
 import br.com.java.controller.ProdutoController;
 import br.com.java.controller.QuemSomosController;
+import br.com.java.dao.PessoaDAO;
+import br.com.java.dao.PessoaDAOImpl;
+import br.com.java.models.Pessoa;
+import br.com.java.service.PessoaService;
+import br.com.java.service.PessoaServiceImpl;
 
 
 
 
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses={
-		HomeController.class,
-		ClienteCadController.class,
-		   ClienteController.class,
-		   ProdutoCadController.class,
-		   ProdutoController.class,
-		   QuemSomosController.class,
-		   ContatoController.class
-		   })
+@ComponentScan(basePackages = "br.com.java")
 
 @Configuration
-@Import(PersistenceConfig.class)
+@Import(HibernateConfiguration.class)
 public class AppConfig extends WebMvcConfigurerAdapter {
 	
 	
@@ -76,13 +73,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         return new StandardServletMultipartResolver();
     }
 	
-	@Bean
-	public CacheManager cacheManager(){
-	  CacheBuilder<Object, Object> builder = CacheBuilder.newBuilder().maximumSize(100).expireAfterAccess(5, TimeUnit.MINUTES);
-	  GuavaCacheManager manager = new GuavaCacheManager();
-	  manager.setCacheBuilder(builder);
-	  return manager;
-	}
+
 	
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
